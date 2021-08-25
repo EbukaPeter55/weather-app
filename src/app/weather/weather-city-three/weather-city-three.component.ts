@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from 'src/app/services/weather.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-weather-city-two',
-  templateUrl: './weather-city-two.component.html',
-  styleUrls: ['./weather-city-two.component.scss']
+  selector: 'app-weather-city-three',
+  templateUrl: './weather-city-three.component.html',
+  styleUrls: ['./weather-city-three.component.scss']
 })
-export class WeatherCityTwoComponent implements OnInit {
+export class WeatherCityThreeComponent implements OnInit {
   public weatherData:any;
   public nameOfCity:any;
   public temperature:any;
@@ -15,14 +16,12 @@ export class WeatherCityTwoComponent implements OnInit {
   public tempCelcius:any;
   public subscription;
 
-  constructor(public weatherservice: WeatherService) { }
+  constructor(public router: Router, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
-  //  Call the observable from the service and subscribe to it to get data 
-  this.subscription = this.weatherservice.getWeatherTwoData().subscribe
-  (data => {
+ this.subscription = this.route.data.subscribe(data => {
     console.log(data);
-    this.weatherData = data;
+    this.weatherData = data.weather;
    // Get the name of city
    this.nameOfCity = this.weatherData.name;
    console.log(this.nameOfCity);
@@ -40,15 +39,14 @@ export class WeatherCityTwoComponent implements OnInit {
    this.image = this.weatherData.weather[0].icon;
    console.log(this.image);
    
+
     
   })
   }
 
-  
   // Unsubscribe the subscription in the ngOndestroy lifecycle hook to prevent memory leak
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
-
 
 }

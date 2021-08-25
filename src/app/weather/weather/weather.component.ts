@@ -13,13 +13,14 @@ export class WeatherComponent implements OnInit {
   public windSpeed:any;
   public image:any;
   public tempCelcius:any;
+  public subscription;
 
   constructor(public weatherservice: WeatherService) { }
 
 
   ngOnInit(): void {
   //  Call the observable from the service and subscribe to it to get data 
-   this.weatherservice.getWeatherData().subscribe
+  this.subscription = this.weatherservice.getWeatherData().subscribe
    (data => {
     this.weatherData = data;
     console.log(this.weatherData);
@@ -40,10 +41,13 @@ export class WeatherComponent implements OnInit {
     this.image = this.weatherData.weather[0].icon;
     console.log(this.image);
     
-    
-    
-    
    });
+  }
+
+
+  // Unsubscribe the subscription in the ngOndestroy lifecycle hook to prevent memory leak
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

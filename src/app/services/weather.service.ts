@@ -26,6 +26,12 @@ export class WeatherService {
       + 'mumbai&appid=f28225e651ce459aa65dcad0b3d6ed2d');
   }
 
+  //  Method to communicate with the third API for Chicago City via a HTTP request
+  getWeatherThreeData(): Observable<Weather>{
+    return this.http.get<Weather>(this.domainProtocol + this.domainName 
+      + 'chicago&appid=f28225e651ce459aa65dcad0b3d6ed2d');
+  }
+
 
 }
 
