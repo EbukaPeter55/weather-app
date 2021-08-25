@@ -7,11 +7,12 @@ import { WeatherService } from 'src/app/services/weather.service';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
-  public weatherData;
-  public nameOfCity;
-  public temperature;
-  public windSpeed;
-  public image;
+  public weatherData:any;
+  public nameOfCity:any;
+  public temperature:any;
+  public windSpeed:any;
+  public image:any;
+  public tempCelcius:any;
 
   constructor(public weatherservice: WeatherService) { }
 
@@ -25,12 +26,20 @@ export class WeatherComponent implements OnInit {
     // Get the name of city
     this.nameOfCity = this.weatherData.name;
     console.log(this.nameOfCity);
+    
     // Get the temperature
     this.temperature = this.weatherData.main.temp;
     console.log(this.temperature);
+    // Convert to celsius
+    this.tempCelcius = (this.temperature - 273.15).toFixed(0);
+    console.log(this.tempCelcius);
+    
     // Get Winspeed
     this.windSpeed = this.weatherData.wind.speed;
     console.log(this.windSpeed);
+    this.image = this.weatherData.weather[0].icon;
+    console.log(this.image);
+    
     
     
     
