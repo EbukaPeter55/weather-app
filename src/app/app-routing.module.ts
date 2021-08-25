@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // Lazy load the Weather module to improve performance
+  {
+    path: "weather", 
+  loadChildren: ()=> import('./weather/weather.module').then(m => m.WeatherModule)
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
