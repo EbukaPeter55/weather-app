@@ -1,0 +1,16 @@
+// Import the scss variables
+@import "~src/scss/variables";
+
+footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background: $background-color;
+    margin-top: 35.4%;
+    font-size: 1rem;
+    color: $text-color;
+    font-family: $font-family;
+}
