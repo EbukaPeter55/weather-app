@@ -14,6 +14,8 @@ export class WeatherCityTwoComponent implements OnInit {
   public image:any;
   public tempCelcius:any;
   public subscription;
+  public sunset_time:any;
+  public isDay:any;
 
   constructor(public weatherservice: WeatherService) { }
 
@@ -39,12 +41,22 @@ export class WeatherCityTwoComponent implements OnInit {
    console.log(this.windSpeed);
    this.image = this.weatherData.weather[0].icon;
    console.log(this.image);
+   console.log(this.weatherData.sys.sunset);
    
-    
+   //Set weather data  
+   console.log(this.weatherData);
+   let timeForSunset = new Date(this.weatherData.sys.sunset * 1000);
+   this.sunset_time = timeForSunset.toLocaleTimeString();
+   // Check whether it is day or night time
+   let currentDate = new Date();
+   this.isDay = (currentDate.getTime() < timeForSunset.getTime());
   })
+
+    
+    
   }
 
-  
+
   // Unsubscribe the subscription in the ngOndestroy lifecycle hook to prevent memory leak
   ngOnDestroy(){
     this.subscription.unsubscribe();
