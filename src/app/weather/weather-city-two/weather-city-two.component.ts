@@ -34,7 +34,7 @@ export class WeatherCityTwoComponent implements OnInit {
    this.tempCelcius = (this.temperature - 273.15).toFixed(0);
    console.log(this.tempCelcius);
    
-   // Get Winspeed
+   // Get Windspeed
    this.windSpeed = this.weatherData.wind.speed;
    console.log(this.windSpeed);
    this.image = this.weatherData.weather[0].icon;
