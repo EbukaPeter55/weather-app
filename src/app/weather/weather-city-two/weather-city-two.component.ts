@@ -50,9 +50,8 @@ export class WeatherCityTwoComponent implements OnInit {
    // Check whether it is day or night time
    let currentDate = new Date();
    this.isDay = (currentDate.getTime() < timeForSunset.getTime());
-  })
-
-    
+  });
+   
     
   }
 
