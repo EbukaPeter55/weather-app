@@ -15,6 +15,8 @@ export class WeatherCityThreeComponent implements OnInit {
   public image:any;
   public tempCelcius:any;
   public subscription;
+  public sunset_time:any;
+  public isDay:any;
 
   constructor(public router: Router, public route: ActivatedRoute) { }
 
@@ -39,9 +41,16 @@ export class WeatherCityThreeComponent implements OnInit {
    this.image = this.weatherData.weather[0].icon;
    console.log(this.image);
    
-
+   //Set weather data  
+   console.log(this.weatherData);
+   let timeForSunset = new Date(this.weatherData.sys.sunset * 1000);
+   this.sunset_time = timeForSunset.toLocaleTimeString();
+   // Check whether it is day or night time
+   let currentDate = new Date();
+   this.isDay = (currentDate.getTime() < timeForSunset.getTime());
     
-  })
+  });
+  
   }
 
   // Unsubscribe the subscription in the ngOndestroy lifecycle hook to prevent memory leak

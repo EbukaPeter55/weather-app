@@ -1,1 +1,20 @@
-<p>weather-city-three works!</p>
+<main>
+    <h1>{{this.nameOfCity}} city</h1>
+    <div class="weather-card-wrapper">
+     <img *ngIf="this.isDay" src="../../../assets/image/sunny.svg" alt="Sun image">
+     <img *ngIf="!this.isDay" src="../../../assets/image/moon.svg" alt="Moon image">
+     <img class="cloud" src="../../../assets/image/cloud.svg" alt="Cloud image">
+     <div data="temp">
+         <h6>Temperature(celcius):</h6>
+          <p>{{this.tempCelcius}}</p>
+    </div>
+    <div class="wind-speed">
+        <h6>Wind speed:</h6>
+        <p>{{this.windSpeed}}</p>
+    </div>
+    <div class="wind-speed image">
+        <h6>Icon:</h6>
+        <p>{{this.image}}</p>
+    </div>
+    </div>
+</main>
