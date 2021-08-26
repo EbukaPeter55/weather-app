@@ -45,7 +45,6 @@ export class WeatherCityTwoComponent implements OnInit {
    this.isDay = (currentDate.getTime() < timeForSunset.getTime());
   });
    
-    
   }
 
 
