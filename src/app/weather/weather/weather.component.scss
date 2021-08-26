@@ -92,3 +92,12 @@ main {
     from{margin-left: -55px;}
     to{margin-left: 65px;}
 }
+
+// RESPONSIVE STYLES FOR MOBILE
+@media only screen and (max-width: 748px){
+    main {
+        .weather-card-wrapper{
+            max-width: 90%!important;
+        }
+    }
+}
