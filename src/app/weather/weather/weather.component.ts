@@ -25,23 +25,18 @@ export class WeatherComponent implements OnInit {
   this.subscription = this.weatherservice.getWeatherData().subscribe
    (data => {
     this.weatherData = data;
-    console.log(this.weatherData);
+    // console.log(this.weatherData);
     // Get the name of city
     this.nameOfCity = this.weatherData.name;
-    console.log(this.nameOfCity);
     
     // Get the temperature
     this.temperature = this.weatherData.main.temp;
-    console.log(this.temperature);
     // Convert to celsius
     this.tempCelcius = (this.temperature - 273.15).toFixed(0);
-    console.log(this.tempCelcius);
     
     // Get Winspeed
     this.windSpeed = this.weatherData.wind.speed;
-    console.log(this.windSpeed);
     this.image = this.weatherData.weather[0].icon;
-    console.log(this.image);
     
     //Set weather data  
    console.log(this.weatherData);
@@ -51,7 +46,7 @@ export class WeatherComponent implements OnInit {
    let currentDate = new Date();
    this.isDay = (currentDate.getTime() < timeForSunset.getTime());
    });
-   
+
   }
 
 

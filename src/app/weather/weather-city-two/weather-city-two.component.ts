@@ -23,28 +23,21 @@ export class WeatherCityTwoComponent implements OnInit {
   //  Call the observable from the service and subscribe to it to get data 
   this.subscription = this.weatherservice.getWeatherTwoData().subscribe
   (data => {
-    console.log(data);
+    // console.log(data);
     this.weatherData = data;
    // Get the name of city
    this.nameOfCity = this.weatherData.name;
-   console.log(this.nameOfCity);
    
    // Get the temperature
    this.temperature = this.weatherData.main.temp;
-   console.log(this.temperature);
    // Convert to celsius
    this.tempCelcius = (this.temperature - 273.15).toFixed(0);
-   console.log(this.tempCelcius);
    
    // Get Windspeed
    this.windSpeed = this.weatherData.wind.speed;
-   console.log(this.windSpeed);
    this.image = this.weatherData.weather[0].icon;
-   console.log(this.image);
-   console.log(this.weatherData.sys.sunset);
    
    //Set weather data  
-   console.log(this.weatherData);
    let timeForSunset = new Date(this.weatherData.sys.sunset * 1000);
    this.sunset_time = timeForSunset.toLocaleTimeString();
    // Check whether it is day or night time
