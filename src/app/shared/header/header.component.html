@@ -1,13 +1,24 @@
 <header>
     <nav>
         <ul>
-            <li>
+            <li [routerLink]="['/weather/weather-home']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
+                Home
+            </li>
+            <li [routerLink]="['/weather/weather-city-two']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
                 Mumbai city
             </li>
-            <li>
+            <li [routerLink]="['/weather/weather-view']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
                 London
             </li>
-            <li>
+            <li [routerLink]="['/weather/weather-city-three']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">
                 Chicago city
             </li>
         </ul>

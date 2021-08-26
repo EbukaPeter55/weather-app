@@ -6,13 +6,15 @@ import { WeatherComponent } from './weather/weather.component';
 import { WeatherCityTwoComponent } from './weather-city-two/weather-city-two.component';
 import { WeatherCityThreeComponent } from './weather-city-three/weather-city-three.component';
 import { WeatherThreeResolver } from '../resolvers/weather-three.resolver';
+import { WeatherHomeComponent } from './weather-home/weather-home.component';
 
 
 @NgModule({
   declarations: [
     WeatherComponent,
     WeatherCityTwoComponent,
-    WeatherCityThreeComponent
+    WeatherCityThreeComponent,
+    WeatherHomeComponent
   ],
   imports: [
     CommonModule,
