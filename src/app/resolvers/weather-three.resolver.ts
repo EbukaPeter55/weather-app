@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Resolve, Router, ActivatedRouteSnapshot} from '@angular/router';
+import {Resolve, Router} from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { WeatherService } from '../services/weather.service';

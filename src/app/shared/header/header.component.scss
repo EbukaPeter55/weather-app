@@ -18,6 +18,15 @@ header {
         font-family: $font-family;
         margin-left: 1rem;
         cursor: pointer;
+        a{
+        color: $text-color;
+        text-decoration: none;
+        }
+        .active{
+            color: blue;
+            text-decoration: underline;
+            transition: 1s;
+        }
     }  
     }
     }

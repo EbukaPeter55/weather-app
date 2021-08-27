@@ -39,7 +39,6 @@ export class WeatherComponent implements OnInit {
     this.image = this.weatherData.weather[0].icon;
     
     //Set weather data  
-   console.log(this.weatherData);
    let timeForSunset = new Date(this.weatherData.sys.sunset * 1000);
    this.sunset_time = timeForSunset.toLocaleTimeString();
    // Check whether it is day or night time

@@ -1,25 +1,33 @@
 <header>
     <nav>
         <ul>
-            <li [routerLink]="['/weather/weather-home']"
+            <li>
+            <a [routerLink]="['/weather/weather-home']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }">
                 Home
+            </a>               
             </li>
-            <li [routerLink]="['/weather/weather-city-two']"
+            <li>
+            <a [routerLink]="['/weather/weather-city-two']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }">
                 Mumbai city
+            </a>            
             </li>
-            <li [routerLink]="['/weather/weather-view']"
+            <li>
+            <a [routerLink]="['/weather/weather-view']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }">
                 London
+            </a>
             </li>
-            <li [routerLink]="['/weather/weather-city-three']"
+            <li>
+            <a [routerLink]="['/weather/weather-city-three']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }">
                 Chicago city
+            </a>
             </li>
         </ul>
     </nav>
